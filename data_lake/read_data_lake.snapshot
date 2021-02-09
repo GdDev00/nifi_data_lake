@@ -68,35 +68,6 @@
             "type" : "PROCESSOR"
           },
           "zIndex" : 0
-        }, {
-          "backPressureDataSizeThreshold" : "1 GB",
-          "backPressureObjectThreshold" : 10000,
-          "bends" : [ ],
-          "componentType" : "CONNECTION",
-          "destination" : {
-            "groupId" : "3d3bdb68-0605-35b0-9fb0-5ed4d305dc61",
-            "id" : "f108255a-b5e6-34d5-9afd-1bee09836d07",
-            "name" : "OutputDataLkae",
-            "type" : "OUTPUT_PORT"
-          },
-          "flowFileExpiration" : "0 sec",
-          "groupIdentifier" : "3d3bdb68-0605-35b0-9fb0-5ed4d305dc61",
-          "identifier" : "c6cba1ec-44f2-3ba0-a1cf-20b104a5e500",
-          "labelIndex" : 1,
-          "loadBalanceCompression" : "DO_NOT_COMPRESS",
-          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-          "name" : "",
-          "partitioningAttribute" : "",
-          "prioritizers" : [ ],
-          "selectedRelationships" : [ "success" ],
-          "source" : {
-            "comments" : "",
-            "groupId" : "3d3bdb68-0605-35b0-9fb0-5ed4d305dc61",
-            "id" : "b512a188-72e2-3730-84c8-b9485bb9ec5d",
-            "name" : "UpdateCounter",
-            "type" : "PROCESSOR"
-          },
-          "zIndex" : 0
         } ],
         "controllerServices" : [ ],
         "flowFileConcurrency" : "UNBOUNDED",
@@ -253,8 +224,8 @@
           "name" : "UpdateCounter",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : 1040.0,
-            "y" : 240.0
+            "x" : 1064.0,
+            "y" : 152.0
           },
           "properties" : {
             "counter-name" : "datalakerecordsprocessed",
