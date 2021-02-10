@@ -10,7 +10,7 @@
         "componentType" : "PROCESS_GROUP",
         "connections" : [ {
           "backPressureDataSizeThreshold" : "1 GB",
-          "backPressureObjectThreshold" : 10000,
+          "backPressureObjectThreshold" : 100,
           "bends" : [ ],
           "componentType" : "CONNECTION",
           "destination" : {
@@ -22,7 +22,7 @@
           },
           "flowFileExpiration" : "0 sec",
           "groupIdentifier" : "3d3bdb68-0605-35b0-9fb0-5ed4d305dc61",
-          "identifier" : "730fa5d4-ab1e-399f-8361-55f7f1fdbf94",
+          "identifier" : "a242dc78-baa7-31e1-b741-91704dc337c8",
           "labelIndex" : 1,
           "loadBalanceCompression" : "DO_NOT_COMPRESS",
           "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -52,7 +52,7 @@
           },
           "flowFileExpiration" : "0 sec",
           "groupIdentifier" : "3d3bdb68-0605-35b0-9fb0-5ed4d305dc61",
-          "identifier" : "5a34d350-a8a5-34b1-a1f9-99f470779e9b",
+          "identifier" : "a699c3ac-6645-3b67-ae36-85e4af7fe4d2",
           "labelIndex" : 1,
           "loadBalanceCompression" : "DO_NOT_COMPRESS",
           "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -116,8 +116,8 @@
           "identifier" : "f108255a-b5e6-34d5-9afd-1bee09836d07",
           "name" : "OutputDataLkae",
           "position" : {
-            "x" : 1096.0,
-            "y" : 64.0
+            "x" : 1104.0,
+            "y" : 40.0
           },
           "type" : "OUTPUT_PORT"
         } ],
@@ -147,7 +147,7 @@
             "y" : 8.0
           },
           "properties" : {
-            "Keep Source File" : "false",
+            "Keep Source File" : "true",
             "Minimum File Age" : "0 sec",
             "Polling Interval" : "0 sec",
             "Input Directory" : "/home/giacomo/Documenti/DataEngineering/cap10/datalake",
@@ -155,7 +155,7 @@
             "Minimum File Size" : "0 B",
             "Ignore Hidden Files" : "true",
             "Recurse Subdirectories" : "true",
-            "File Filter" : "[^\\.].*([jJ][oO][sS][oO][nN]??)$."
+            "File Filter" : "[^\\.].*(?i).*\\.json"
           },
           "propertyDescriptors" : {
             "Keep Source File" : {
@@ -256,7 +256,7 @@
           "penaltyDuration" : "30 sec",
           "position" : {
             "x" : 1064.0,
-            "y" : 216.0
+            "y" : 224.0
           },
           "properties" : {
             "counter-name" : "datalakerecordsprocessed",
@@ -284,7 +284,7 @@
           "type" : "org.apache.nifi.processors.standard.UpdateCounter",
           "yieldDuration" : "1 sec"
         }, {
-          "autoTerminatedRelationships" : [ ],
+          "autoTerminatedRelationships" : [ "failure", "unmatched" ],
           "bulletinLevel" : "WARN",
           "bundle" : {
             "artifact" : "nifi-standard-nar",
@@ -300,15 +300,15 @@
           "name" : "EvaluateJsonPath",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : 336.0,
-            "y" : 224.0
+            "x" : 320.0,
+            "y" : 232.0
           },
           "properties" : {
             "zip" : "$.zip",
             "Destination" : "flowfile-attribute",
             "city" : "$.city",
             "street" : "$.street",
-            "Return Type" : "json",
+            "Return Type" : "auto-detect",
             "name" : "$.name",
             "Null Value Representation" : "empty string",
             "state" : "$.state",

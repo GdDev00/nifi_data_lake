@@ -1,6 +1,5 @@
 flows:
-  c3890ca8-b8da-4688-b4c0-ae9f6bb6f119: {ver: 4, file: read_data_lake.snapshot, comments: Change
-      file path, author: anonymous, created: 1612939620881, flowName: read_data_lake,
-    flowDesc: ''}
+  c3890ca8-b8da-4688-b4c0-ae9f6bb6f119: {ver: 5, file: read_data_lake.snapshot, comments: '',
+    author: anonymous, created: 1612988510512, flowName: read_data_lake, flowDesc: ''}
 layoutVer: 1
 bucketId: 1f13167c-2acf-4b8b-bc1e-62304f3cfafc
