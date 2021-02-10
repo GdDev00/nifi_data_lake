@@ -74,6 +74,7 @@
           "bends" : [ ],
           "componentType" : "CONNECTION",
           "destination" : {
+            "comments" : "",
             "groupId" : "3d3bdb68-0605-35b0-9fb0-5ed4d305dc61",
             "id" : "f108255a-b5e6-34d5-9afd-1bee09836d07",
             "name" : "OutputDataLkae",
@@ -108,6 +109,7 @@
         "name" : "read_datalake",
         "outputPorts" : [ {
           "allowRemoteAccess" : false,
+          "comments" : "",
           "componentType" : "OUTPUT_PORT",
           "concurrentlySchedulableTaskCount" : 1,
           "groupIdentifier" : "3d3bdb68-0605-35b0-9fb0-5ed4d305dc61",
@@ -120,8 +122,8 @@
           "type" : "OUTPUT_PORT"
         } ],
         "position" : {
-          "x" : 719.9671020507812,
-          "y" : 152.15888023376465
+          "x" : 608.0,
+          "y" : 16.0
         },
         "processGroups" : [ ],
         "processors" : [ {
@@ -148,7 +150,7 @@
             "Keep Source File" : "false",
             "Minimum File Age" : "0 sec",
             "Polling Interval" : "0 sec",
-            "Input Directory" : "/home/giacomo/datalake",
+            "Input Directory" : "/home/giacomo/Documenti/DataEngineering/cap10/datalake",
             "Batch Size" : "10",
             "Minimum File Size" : "0 B",
             "Ignore Hidden Files" : "true",
