@@ -1,0 +1,453 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "externalControllerServices" : { },
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+            "id" : "8ce5b600-a5f9-393f-a020-ebb508bb5dad",
+            "name" : "UpdateCounter",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+          "identifier" : "492de031-990e-3abc-8e2d-683253dd70b0",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+            "id" : "2d55f37b-f2ff-386b-8e60-a689933a1648",
+            "name" : "PutSQL",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+            "id" : "2d55f37b-f2ff-386b-8e60-a689933a1648",
+            "name" : "PutSQL",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+          "identifier" : "f041d19a-0ef8-3596-8c09-2167a57c428e",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+            "id" : "707bbf4e-b642-38c0-bd4b-3517285bc243",
+            "name" : "input",
+            "type" : "INPUT_PORT"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+            "id" : "18b6cc01-8e50-3871-a177-4f058100c1df",
+            "name" : "UpdateCounter",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+          "identifier" : "ca0558c9-1129-343a-8e40-67f3ea83810c",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "failure" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+            "id" : "2d55f37b-f2ff-386b-8e60-a689933a1648",
+            "name" : "PutSQL",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        } ],
+        "controllerServices" : [ {
+          "bundle" : {
+            "artifact" : "nifi-dbcp-service-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.12.1"
+          },
+          "comments" : "",
+          "componentType" : "CONTROLLER_SERVICE",
+          "controllerServiceApis" : [ {
+            "bundle" : {
+              "artifact" : "nifi-standard-services-api-nar",
+              "group" : "org.apache.nifi",
+              "version" : "1.12.1"
+            },
+            "type" : "org.apache.nifi.dbcp.DBCPService"
+          } ],
+          "groupIdentifier" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+          "identifier" : "3b2cd5e5-3eef-3a52-8abd-ccd3612a341c",
+          "name" : "DBCPConnectionPool",
+          "properties" : {
+            "dbcp-min-idle-conns" : "0",
+            "Max Wait Time" : "500 millis",
+            "Database Driver Class Name" : "org.postgresql.Driver",
+            "dbcp-min-evictable-idle-time" : "30 mins",
+            "Max Total Connections" : "8",
+            "dbcp-max-conn-lifetime" : "-1",
+            "Database Connection URL" : "jdbc:postgresql://192.168.1.110/test",
+            "dbcp-time-between-eviction-runs" : "-1",
+            "Database User" : "postgres",
+            "dbcp-soft-min-evictable-idle-time" : "-1",
+            "database-driver-locations" : "/home/giacomo/nifi-1.12.1/drivers/postgresql-42.2.18.jar",
+            "dbcp-max-idle-conns" : "8"
+          },
+          "propertyDescriptors" : {
+            "kerberos-password" : {
+              "displayName" : "Kerberos Password",
+              "identifiesControllerService" : false,
+              "name" : "kerberos-password",
+              "sensitive" : true
+            },
+            "dbcp-min-idle-conns" : {
+              "displayName" : "Minimum Idle Connections",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-min-idle-conns",
+              "sensitive" : false
+            },
+            "Max Wait Time" : {
+              "displayName" : "Max Wait Time",
+              "identifiesControllerService" : false,
+              "name" : "Max Wait Time",
+              "sensitive" : false
+            },
+            "Database Driver Class Name" : {
+              "displayName" : "Database Driver Class Name",
+              "identifiesControllerService" : false,
+              "name" : "Database Driver Class Name",
+              "sensitive" : false
+            },
+            "dbcp-min-evictable-idle-time" : {
+              "displayName" : "Minimum Evictable Idle Time",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-min-evictable-idle-time",
+              "sensitive" : false
+            },
+            "kerberos-principal" : {
+              "displayName" : "Kerberos Principal",
+              "identifiesControllerService" : false,
+              "name" : "kerberos-principal",
+              "sensitive" : false
+            },
+            "Max Total Connections" : {
+              "displayName" : "Max Total Connections",
+              "identifiesControllerService" : false,
+              "name" : "Max Total Connections",
+              "sensitive" : false
+            },
+            "kerberos-credentials-service" : {
+              "displayName" : "Kerberos Credentials Service",
+              "identifiesControllerService" : true,
+              "name" : "kerberos-credentials-service",
+              "sensitive" : false
+            },
+            "dbcp-max-conn-lifetime" : {
+              "displayName" : "Max Connection Lifetime",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-max-conn-lifetime",
+              "sensitive" : false
+            },
+            "Validation-query" : {
+              "displayName" : "Validation query",
+              "identifiesControllerService" : false,
+              "name" : "Validation-query",
+              "sensitive" : false
+            },
+            "Database Connection URL" : {
+              "displayName" : "Database Connection URL",
+              "identifiesControllerService" : false,
+              "name" : "Database Connection URL",
+              "sensitive" : false
+            },
+            "dbcp-time-between-eviction-runs" : {
+              "displayName" : "Time Between Eviction Runs",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-time-between-eviction-runs",
+              "sensitive" : false
+            },
+            "Database User" : {
+              "displayName" : "Database User",
+              "identifiesControllerService" : false,
+              "name" : "Database User",
+              "sensitive" : false
+            },
+            "dbcp-soft-min-evictable-idle-time" : {
+              "displayName" : "Soft Minimum Evictable Idle Time",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-soft-min-evictable-idle-time",
+              "sensitive" : false
+            },
+            "database-driver-locations" : {
+              "displayName" : "Database Driver Location(s)",
+              "identifiesControllerService" : false,
+              "name" : "database-driver-locations",
+              "sensitive" : false
+            },
+            "dbcp-max-idle-conns" : {
+              "displayName" : "Max Idle Connections",
+              "identifiesControllerService" : false,
+              "name" : "dbcp-max-idle-conns",
+              "sensitive" : false
+            },
+            "Password" : {
+              "displayName" : "Password",
+              "identifiesControllerService" : false,
+              "name" : "Password",
+              "sensitive" : true
+            }
+          },
+          "type" : "org.apache.nifi.dbcp.DBCPConnectionPool"
+        } ],
+        "flowFileConcurrency" : "UNBOUNDED",
+        "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+        "funnels" : [ ],
+        "identifier" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+        "inputPorts" : [ {
+          "allowRemoteAccess" : false,
+          "comments" : "",
+          "componentType" : "INPUT_PORT",
+          "concurrentlySchedulableTaskCount" : 1,
+          "groupIdentifier" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+          "identifier" : "707bbf4e-b642-38c0-bd4b-3517285bc243",
+          "name" : "input",
+          "position" : {
+            "x" : 432.0,
+            "y" : -48.0
+          },
+          "type" : "INPUT_PORT"
+        } ],
+        "labels" : [ ],
+        "name" : "insert_sql_stage",
+        "outputPorts" : [ ],
+        "position" : {
+          "x" : 1992.0,
+          "y" : 16.0
+        },
+        "processGroups" : [ ],
+        "processors" : [ {
+          "autoTerminatedRelationships" : [ "success" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.12.1"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+          "identifier" : "18b6cc01-8e50-3871-a177-4f058100c1df",
+          "name" : "UpdateCounter",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 648.0,
+            "y" : 376.0
+          },
+          "properties" : {
+            "counter-name" : "Fail",
+            "delta" : "1"
+          },
+          "propertyDescriptors" : {
+            "counter-name" : {
+              "displayName" : "Counter Name",
+              "identifiesControllerService" : false,
+              "name" : "counter-name",
+              "sensitive" : false
+            },
+            "delta" : {
+              "displayName" : "Delta",
+              "identifiesControllerService" : false,
+              "name" : "delta",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.UpdateCounter",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "success" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.12.1"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+          "identifier" : "8ce5b600-a5f9-393f-a020-ebb508bb5dad",
+          "name" : "UpdateCounter",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 80.0,
+            "y" : 368.0
+          },
+          "properties" : {
+            "counter-name" : "success",
+            "delta" : "1"
+          },
+          "propertyDescriptors" : {
+            "counter-name" : {
+              "displayName" : "Counter Name",
+              "identifiesControllerService" : false,
+              "name" : "counter-name",
+              "sensitive" : false
+            },
+            "delta" : {
+              "displayName" : "Delta",
+              "identifiesControllerService" : false,
+              "name" : "delta",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.UpdateCounter",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "retry" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.12.1"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "3aebb266-068e-3e5a-89e1-71e771e41f4e",
+          "identifier" : "2d55f37b-f2ff-386b-8e60-a689933a1648",
+          "name" : "PutSQL",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 376.0,
+            "y" : 88.0
+          },
+          "properties" : {
+            "Support Fragmented Transactions" : "true",
+            "putsql-sql-statement" : "INSERT INTO staging VALUES (${userId} ,'${name}',${age},'${street}','${city}','${state}','${zip}')\nON CONFLICT (userid) DO UPDATE SET \n\tname='${name}',age=${age},street='${street}',city='${city}',state='${state}',zip='${zip}';",
+            "Batch Size" : "100",
+            "Obtain Generated Keys" : "false",
+            "JDBC Connection Pool" : "3b2cd5e5-3eef-3a52-8abd-ccd3612a341c",
+            "database-session-autocommit" : "false",
+            "rollback-on-failure" : "true"
+          },
+          "propertyDescriptors" : {
+            "Support Fragmented Transactions" : {
+              "displayName" : "Support Fragmented Transactions",
+              "identifiesControllerService" : false,
+              "name" : "Support Fragmented Transactions",
+              "sensitive" : false
+            },
+            "putsql-sql-statement" : {
+              "displayName" : "SQL Statement",
+              "identifiesControllerService" : false,
+              "name" : "putsql-sql-statement",
+              "sensitive" : false
+            },
+            "Transaction Timeout" : {
+              "displayName" : "Transaction Timeout",
+              "identifiesControllerService" : false,
+              "name" : "Transaction Timeout",
+              "sensitive" : false
+            },
+            "Batch Size" : {
+              "displayName" : "Batch Size",
+              "identifiesControllerService" : false,
+              "name" : "Batch Size",
+              "sensitive" : false
+            },
+            "Obtain Generated Keys" : {
+              "displayName" : "Obtain Generated Keys",
+              "identifiesControllerService" : false,
+              "name" : "Obtain Generated Keys",
+              "sensitive" : false
+            },
+            "JDBC Connection Pool" : {
+              "displayName" : "JDBC Connection Pool",
+              "identifiesControllerService" : true,
+              "name" : "JDBC Connection Pool",
+              "sensitive" : false
+            },
+            "database-session-autocommit" : {
+              "displayName" : "Database Session AutoCommit",
+              "identifiesControllerService" : false,
+              "name" : "database-session-autocommit",
+              "sensitive" : false
+            },
+            "rollback-on-failure" : {
+              "displayName" : "Rollback On Failure",
+              "identifiesControllerService" : false,
+              "name" : "rollback-on-failure",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.PutSQL",
+          "yieldDuration" : "1 sec"
+        } ],
+        "remoteProcessGroups" : [ ],
+        "variables" : {
+          "table" : "staging"
+        }
+      },
+      "flowEncodingVersion" : "1.0",
+      "parameterContexts" : { }
+    }
+  }
+}
