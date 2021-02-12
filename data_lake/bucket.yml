@@ -10,7 +10,14 @@ flows:
     flowDesc: ''
   f1d3cba2-9042-4dcd-a6c1-453dd29fd7c2: {ver: 2, file: scan_lake.snapshot, comments: '',
     author: anonymous, created: 1613112260917, flowName: scan_lake, flowDesc: ''}
-  c4bdee15-3d48-4045-b841-756b8c50e9ba: {ver: 1, file: sql_insert.snapshot, comments: '',
-    author: anonymous, created: 1613112272801, flowName: sql_insert, flowDesc: ''}
+  c4bdee15-3d48-4045-b841-756b8c50e9ba:
+    ver: 2
+    file: sql_insert.snapshot
+    comments: |
+      change table name, now get a global variable name
+    author: anonymous
+    created: 1613112367036
+    flowName: sql_insert
+    flowDesc: ''
 layoutVer: 1
 bucketId: 1f13167c-2acf-4b8b-bc1e-62304f3cfafc

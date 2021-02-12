@@ -376,7 +376,7 @@
           },
           "properties" : {
             "Support Fragmented Transactions" : "true",
-            "putsql-sql-statement" : "INSERT INTO staging VALUES (${userId} ,'${name}',${age},'${street}','${city}','${state}','${zip}')\nON CONFLICT (userid) DO UPDATE SET \n\tname='${name}',age=${age},street='${street}',city='${city}',state='${state}',zip='${zip}';",
+            "putsql-sql-statement" : "INSERT INTO {table} VALUES (${userId} ,'${name}',${age},'${street}','${city}','${state}','${zip}')\nON CONFLICT (userid) DO UPDATE SET \n\tname='${name}',age=${age},street='${street}',city='${city}',state='${state}',zip='${zip}';",
             "Batch Size" : "100",
             "Obtain Generated Keys" : "false",
             "JDBC Connection Pool" : "3b2cd5e5-3eef-3a52-8abd-ccd3612a341c",
