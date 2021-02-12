@@ -344,7 +344,7 @@
             }
           },
           "runDurationMillis" : 0,
-          "scheduledState" : "DISABLED",
+          "scheduledState" : "ENABLED",
           "schedulingPeriod" : "0 sec",
           "schedulingStrategy" : "TIMER_DRIVEN",
           "style" : { },
